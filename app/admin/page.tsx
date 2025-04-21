@@ -3,7 +3,7 @@ import Link from "next/link";
 // AdminPage.tsx
 const AdminPage = () => {
   return (
-    <div className="mx-auto py-10 px-4 bg-gradient-to-tl from-pink-500 via-purple-500 to-indigo-500">
+    <div className="mx-auto py-10 px-4 bg-gradient-to-tl from-pink-500 via-purple-500 to-indigo-500 min-h-screen">
       {/* Upload Button */}
       <section className="mb-12">
         <div className="max-w-lg mx-auto p-6 bg-white/30 backdrop-blur-md rounded-xl shadow-lg">
