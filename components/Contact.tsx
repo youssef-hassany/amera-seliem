@@ -5,9 +5,10 @@ export default function Contact() {
       className="py-16 bg-gradient-to-b from-pink-500 via-purple-500 to-indigo-500 text-white"
     >
       <div className="max-w-4xl mx-auto px-4 text-center">
-        <h2 className="text-3xl font-bold mb-6">Let’s Work Together</h2>
+        <h2 className="text-3xl font-bold mb-6">Let&apos;s Work Together</h2>
         <p className="mb-8 text-lg">
-          Have a project in mind? Reach out and let's bring your vision to life.
+          Have a project in mind? Reach out and let&apos;s bring your vision to
+          life.
         </p>
         <a
           href="mailto:hello@adpro.com"

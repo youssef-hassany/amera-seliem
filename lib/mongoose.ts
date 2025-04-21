@@ -8,7 +8,28 @@ if (!MONGODB_URL) {
   throw new Error("Please define the MONGODB_URL environment variable");
 }
 
-let cached = (global as any).mongoose || { conn: null, promise: null };
+// Define interface for the cached connection
+interface MongooseConnection {
+  conn: typeof mongoose | null;
+  promise: Promise<typeof mongoose> | null;
+}
+
+// Update global declaration
+declare global {
+  // eslint-disable-next-line no-var
+  var mongoose: MongooseConnection | undefined;
+}
+
+// Use the interface for the cached connection
+const cached: MongooseConnection = global.mongoose || {
+  conn: null,
+  promise: null,
+};
+
+// Update the global cache
+if (!global.mongoose) {
+  global.mongoose = cached;
+}
 
 export async function connectToDB() {
   if (cached.conn) return cached.conn;
