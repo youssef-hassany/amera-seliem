@@ -4,6 +4,7 @@ import { deleteProject } from "@/app/actions/project-actions";
 import { Project } from "@/types/Project";
 import React, { useEffect, useState } from "react";
 import toast from "react-hot-toast";
+import SkeletonCard from "../SkeletonCard";
 
 const DeleteConfirmationModal = ({
   onConfirm,
@@ -106,6 +107,9 @@ const ProjectsControl = () => {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Your Projects</h2>
         <div className="grid gap-10 md:grid-cols-2">
+          {!projectsList &&
+            [...Array(6)].map((_, index) => <SkeletonCard key={index} />)}
+
           {projectsList?.map((project) => (
             <div
               key={project._id}
@@ -114,7 +118,7 @@ const ProjectsControl = () => {
               <iframe
                 src={project.videoUrl}
                 width="100%"
-                height="200"
+                height="250"
                 frameBorder="0"
                 allow="autoplay; fullscreen"
                 allowFullScreen

@@ -126,16 +126,7 @@ export async function login(formData: LoginData) {
       path: "/",
     });
 
-    // Return user data (without password)
-    const userData: UserWithoutPassword = {
-      _id: user._id,
-      email: user.email,
-      username: user.username,
-      createdAt: user.createdAt,
-      updatedAt: user.updatedAt,
-    };
-
-    return { success: true, user: userData };
+    return { success: true, message: "user logged in successfully" };
   } catch (error) {
     console.error("Login error:", error);
     return { error: "Failed to login" };

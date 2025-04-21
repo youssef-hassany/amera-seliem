@@ -1,4 +1,5 @@
 import { Project } from "@/types/Project";
+import SkeletonCard from "./SkeletonCard";
 
 interface Props {
   ProjectsList: Project[] | undefined;
@@ -13,21 +14,27 @@ export default function ProjectsGrid({ ProjectsList }: Props) {
       <div className="max-w-6xl mx-auto px-4">
         <h2 className="text-3xl font-bold text-center mb-12">Projects</h2>
         <div className="grid gap-10 md:grid-cols-2">
-          {ProjectsList?.map((project, i) => (
+          {!ProjectsList &&
+            [...Array(6)].map((_, index) => <SkeletonCard key={index} />)}
+
+          {ProjectsList?.map((project) => (
             <div
-              key={i}
-              className="group bg-white/10 backdrop-blur-sm rounded-xl overflow-hidden shadow-lg hover:shadow-2xl transition transform hover:scale-[1.02]"
+              key={project._id}
+              className="bg-white/30 backdrop-blur-md p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow"
             >
               <iframe
-                src={`${project.videoUrl}`}
-                className="w-full h-full"
+                src={project.videoUrl}
+                width="100%"
+                height="250"
+                frameBorder="0"
+                allow="autoplay; fullscreen"
                 allowFullScreen
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                className="rounded-md"
               />
-              <div className="p-4">
-                <h3 className="text-xl font-semibold mb-1">{project.title}</h3>
-                <p className="text-gray-200 text-sm">{project.description}</p>
-              </div>
+              <h3 className="text-xl font-semibold mt-4 text-indigo-700">
+                {project.title}
+              </h3>
+              <p className="mt-2 text-gray-600">{project.description}</p>
             </div>
           ))}
         </div>
