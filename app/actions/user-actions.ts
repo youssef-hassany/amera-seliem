@@ -60,7 +60,7 @@ export async function signup(formData: SignupData) {
     (await cookies()).set("amera-auth-token", token, {
       httpOnly: true,
       secure: true,
-      maxAge: 60 * 60 * 24 * 7, // 1 week
+      maxAge: 60 * 60 * 24 * 30,
       path: "/",
     });
 
