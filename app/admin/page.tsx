@@ -1,3 +1,4 @@
+import ProjectsControl from "@/components/admin/ProjectsControl";
 import Link from "next/link";
 
 // AdminPage.tsx
@@ -21,70 +22,7 @@ const AdminPage = () => {
 
       {/* Display Projects */}
       <section>
-        <h2 className="text-2xl font-semibold text-gray-700 mb-4">
-          Your Projects
-        </h2>
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {/* Example Project 1 */}
-          <div className="bg-white/30 backdrop-blur-md p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <iframe
-              src="https://player.vimeo.com/video/123456789"
-              width="100%"
-              height="200"
-              frameBorder="0"
-              allow="autoplay; fullscreen"
-              allowFullScreen
-              className="rounded-md"
-            />
-            <h3 className="text-xl font-semibold mt-4 text-indigo-700">
-              Project Title 1
-            </h3>
-            <p className="mt-2 text-gray-600">Description of the project.</p>
-            <button className="mt-4 py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition-colors">
-              Edit
-            </button>
-          </div>
-
-          {/* Example Project 2 */}
-          <div className="bg-white/30 backdrop-blur-md p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <iframe
-              src="https://player.vimeo.com/video/987654321"
-              width="100%"
-              height="200"
-              frameBorder="0"
-              allow="autoplay; fullscreen"
-              allowFullScreen
-              className="rounded-md"
-            />
-            <h3 className="text-xl font-semibold mt-4 text-indigo-700">
-              Project Title 2
-            </h3>
-            <p className="mt-2 text-gray-600">Description of the project.</p>
-            <button className="mt-4 py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition-colors">
-              Edit
-            </button>
-          </div>
-
-          {/* Example Project 3 */}
-          <div className="bg-white/30 backdrop-blur-md p-6 rounded-lg shadow-md hover:shadow-lg transition-shadow">
-            <iframe
-              src="https://player.vimeo.com/video/1122334455"
-              width="100%"
-              height="200"
-              frameBorder="0"
-              allow="autoplay; fullscreen"
-              allowFullScreen
-              className="rounded-md"
-            />
-            <h3 className="text-xl font-semibold mt-4 text-indigo-700">
-              Project Title 3
-            </h3>
-            <p className="mt-2 text-gray-600">Description of the project.</p>
-            <button className="mt-4 py-2 px-4 bg-pink-500 text-white rounded-md hover:bg-pink-600 transition-colors">
-              Edit
-            </button>
-          </div>
-        </div>
+        <ProjectsControl />
       </section>
     </div>
   );
