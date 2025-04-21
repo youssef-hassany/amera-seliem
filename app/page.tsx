@@ -1,7 +1,7 @@
 import Contact from "@/components/Contact";
 import Hero from "@/components/Hero";
 import Navbar from "@/components/Navbar";
-import ProjectsGrid from "@/components/ProjectsGrid";
+import ProjectsList from "@/components/ProjectsList";
 import Skills from "@/components/Skills";
 import SmoothScroll from "@/components/SmoothScroll";
 
@@ -13,7 +13,7 @@ export default function Home() {
       <div className="">
         <Hero />
         <Skills />
-        <ProjectsGrid />
+        <ProjectsList />
         <Contact />
       </div>
     </main>
